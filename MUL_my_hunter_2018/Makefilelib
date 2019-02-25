@@ -1,0 +1,56 @@
+##
+## EPITECH PROJECT, 2018
+## makefile
+## File description:
+## 
+##
+
+SRC	=	./lib/my/my_convert_char_int.c \
+		./lib/my/my_putchar.c \
+		./lib/my/my_put_nbr.c \
+		./lib/my/my_putstr.c \
+		./lib/my/my_revstr.c \
+		./lib/my/my_strlen.c \
+		./lib/my/my_strlennbr.c \
+		./lib/my/my_putnbr_base.c \
+		./lib/my/my_printf/my_printf.c \
+		./lib/my/my_printf/count_percent.c \
+		./lib/my/my_printf/redirection.c \
+		./lib/my/my_printf/number/number.c \
+		./lib/my/my_printf/str/str.c \
+		./lib/my/my_printf/str2/str2.c \
+		./lib/my/my_printf/character/character.c \
+		./lib/my/my_printf/unsigned/unsigned.c \
+		./lib/my/my_printf/octal/put_nbr_octal.c \
+		./lib/my/my_printf/octal/octal.c \
+		./lib/my/my_printf/hexa/put_nbr_hexa.c \
+		./lib/my/my_printf/hexa/hexa.c \
+        ./lib/my/my_printf/binary/binary.c \
+        ./lib/my/my_printf/binary/put_nbr_binary.c \
+        ./lib/my/my_printf/pointeur/pointeur.c \
+		./lib/my/my_printf/pointeur/put_nbr_pointeur.c \
+        ./lib/my/my_printf/hexa/hexa_cap.c \
+        ./lib/my/my_printf/hexa/put_nbr_hexa_cap.c \
+        ./lib/my/my_printf/modulo/modulo.c
+
+OBJ	=	$(SRC:.c=.o)
+
+NAME	=	libmy.a
+
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
+	ar rc -o $(NAME) $(OBJ)
+	rm -f	*.o \
+			./lib/my/*.o \
+
+clean:
+	rm -f $(OBJ)
+	rm -f *.o
+	rm -f *~
+
+fclean:	clean
+	rm -f $(NAME)
+	rm -f *.o
+
+re:	fclean all
